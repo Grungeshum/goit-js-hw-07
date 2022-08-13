@@ -38,8 +38,8 @@ gallery.addEventListener('click', evt => {
 
   // close modal esc
 
-  gallery.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') {
+  gallery.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
       instance.close();
     }
   });
