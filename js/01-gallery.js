@@ -38,9 +38,14 @@ gallery.addEventListener('click', evt => {
 
   // close modal esc
 
-  gallery.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
+  if (basicLightbox.visible()) {
+    document.addEventListener('keydown', escClose);
+  }
+
+  function escClose({ key }) {
+    if (key === 'Escape') {
       instance.close();
+      document.removeEventListener('keydown', escClose);
     }
-  });
+  }
 });
